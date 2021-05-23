@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naperom Erótico</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="stylesheet" href="css/grelha.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="js/script.js">
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+
+    <main class="page-art">
+
+        <div class="home"><a href="directory.html">NAPEROM</div></a>
+        <div class="info"><a href="sobre.html">ABOUT</div></a>
+        <div class="menu-open">MENU</div>
+
+        <hr>
+
+        <div class="container">
+
+            <article class="art col-md-6"><a href="https://tiagoleao.com" target="_blank">
+                    <h2>
+                        <span class="font1">TIAGO LEÃO</span>
+            </article></a>
+
+            <div class="t-combo col-md-5">
+                <img src="img/tl-combo.png">
+            </div>
+        </div>
+
+        <div class="texto-conteudo">
+
+            <nav class="info-t col-md-6">
+                <div><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=tiagoleao.film.photography@gmail.com"
+                        target="_blank">email:</a> tiagoleao.film.photography@gmail.com</br>telemóvel: (+351) 967 835
+                    829
+                    </br></div>
+                <ul>
+                    <li><a href="https://tiagoleao.com" target="_blank">website:</a> tiagoleao.com</br></li>
+                    
+
+                    <li><a href="https://instagram.com/tiagoleao.film.photo" target="_blank">instagram:
+                        </a>@tiagoleao.film.photo</br></li>
+                </ul>
+            </nav>
+
+            <div class="descricao-bonnie col-md-6">
+                <p>"Authenticity", the word that best defines Tiago's work. He always has the same starting point:
+                    </br>the singularity of the human being. Everyone has a different story to tell... Tiago shapes his
+                    work to the uniqueness of someone's sexuality; both are exploring and looking for answers and, in
+                    the end, telling their story in deep connection with themselves. Every video and photo reflect pure
+                    human nature: it's sexual intimacy, behaviours and desires in an authentic, inclusive and respectful
+                    way. </p>
+            </div>
+        </div>
+
+        <div class="nav-container">
+            <div class="menu-close">close</div>
+            <div class="social">
+                <span>INSTAGRAM</span>
+            </div>
+
+            <div class="menu">
+                <ul class="main-menu">
+                    <li class="main-menu-link"><a href="directory.html">DIRECTORY
+                    </li></a>
+
+                    <li class="main-menu-slide">
+                        <a href="">CATEGORIES +</a>
+
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="photography.html">Photographers</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="video.html">Videographers</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="models.html">Models</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="sex-workers.html">Sex Workers</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="others.html">Others</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="main-menu-slide">
+                        <a href="">LOCATION +</a>
+
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="porto.html">Porto</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">Aveiro</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="lisboa.html">Lisboa</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">Alentejo</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="">Algarve</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="main-menu-link">
+                        <a href="sobre.html">ABOUT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+    <script src="js/script.js"></script>
+    <script>
+        var t1 = gsap.timeline({ paused: true });
+
+        t1.to(".nav-container", 1, {
+            left: 0,
+            ease: Expo.easeInOut,
+        });
+
+        t1.staggerFrom(".menu > div", 0.8, {
+            y: 100,
+            opacity: 0,
+            ease: Expo.easeOut,
+        }, "0.1", "-=0.4"
+        );
+
+        t1.staggerFrom(
+            ".socials", 0.8, {
+            y: 100,
+            opacity: 0,
+            ease: Expo.easeOut,
+        }, "0.4", "-=0.6"
+        );
+
+        t1.reverse();
+        $(document).on("click", ".menu-open", function () {
+            t1.reversed(!t1.reversed());
+        });
+        $(document).on("click", ".menu-close", function () {
+            t1.reversed(!t1.reversed());
+        });
+
+        $('ul.submenu li').click(function (e) {
+            e.preventDefault();
+
+            if ($(this).siblings('li').find('ul.submenu:visible').length) {
+                $('ul.submenu').slideUp('normal');
+            }
+            $(this).find('ul.submenu').slideToggle('normal');
+        });
+
+        $('li.main-menu-slide').click(function (e) {
+            e.preventDefault();
+
+            if ($(this).siblings('li').find('ul.submenu:visible').length) {
+                $('ul.submenu').slideUp('normal');
+            }
+            $(this).find('ul.submenu').slideToggle('normal');
+        });
+    </script>
+</body>
+
+</html>
